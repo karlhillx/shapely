@@ -278,7 +278,7 @@ class BaseGeometry(shapely.Geometry):
         The following limitations apply to WKB serialization:
 
         - linearrings will be converted to linestrings
-        - a point with only NaN coordinates is converted to an empty point
+        - an empty point is converted to a point with only NaN coordinates
         """
         return shapely.to_wkb(self)
 
@@ -289,7 +289,7 @@ class BaseGeometry(shapely.Geometry):
         The following limitations apply to WKB serialization:
 
         - linearrings will be converted to linestrings
-        - a point with only NaN coordinates is converted to an empty point
+        - an empty point is converted to a point with only NaN coordinates
         """
         return shapely.to_wkb(self, hex=True)
 
